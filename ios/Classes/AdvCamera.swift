@@ -522,7 +522,9 @@ public class AdvCameraView : NSObject, FlutterPlatformView, AVCaptureVideoDataOu
 
     // Resume the camera
     func resumeCamera() {
-        captureSession?.startRunning()
+        DispatchQueue.global(qos: .userInitiated).async {
+            self.captureSession?.startRunning()
+        }
     }
     
     // Capture image
