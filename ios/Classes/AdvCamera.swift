@@ -384,7 +384,7 @@ public class AdvCameraView : NSObject, FlutterPlatformView, AVCaptureVideoDataOu
         //this 500ms delay is necessary because without this, the screen will be grey for the first time
         // somehow the first time running is faster than the getView from FlutterNativeView function
         let seconds = 0.5
-        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+        // DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             self.videoPreviewLayer?.frame = self.previewView.bounds
             self.previewView.layer.insertSublayer(self.videoPreviewLayer, at: 0)
             
@@ -427,7 +427,7 @@ public class AdvCameraView : NSObject, FlutterPlatformView, AVCaptureVideoDataOu
                 // Start capture session
                 captureSession.startRunning()
             }
-        }
+        // }
     }
 
     
